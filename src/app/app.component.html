@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="form-inline">
+    <label for="name">Enter name</label>
+    <input type="text" class="form-control b4fo" name="name" id="name" [(ngModel)]="name" placeholder="{{placeholder}}">
+    <a href="#" class="btn btn-info" role="button" (click)="addItem(name)">Create
+      <span>{{counter}}</span> user{{plural}}</a>
+  </div>
+  <ul class="list-group">
+    <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let item of items; let i = index">
+      <span class="badge badge-secondary badge-pill">{{i + 1}}</span>
+      {{item}}
+    </li>
+  </ul>
+</div>

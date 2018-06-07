@@ -10,8 +10,8 @@ import { DataService } from './data.service';
 export class AppComponent {
   items = [];
   constructor(private dataService: DataService) { }
-  addItem(name){
-    this.dataService.addData(name);
+  addItem(name, price) {
+    this.dataService.addData(name, price);
   }
   ngOnInit() {
     this.items = this.dataService.items;

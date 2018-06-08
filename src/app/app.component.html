@@ -12,6 +12,7 @@
         <th>#</th>
         <th>model</th>
         <th>price</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -19,6 +20,11 @@
         <td scope="row">{{i + 1}}</td>
         <td>{{item.name}}</td>
         <td>{{item.price}}</td>
+        <td>
+          <a href="#" (click)="removeItem(i)">
+            <i class="fa fa-close" aria-hidden="true"></i>
+          </a>
+        </td>
       </tr>
     </tbody>
   </table>

@@ -13,4 +13,7 @@ export class DataService {
       price: price
     });
   }
+  removeData(i) {
+    delete this.items[i];
+  }
 }

@@ -9,9 +9,14 @@ import { DataService } from './data.service';
 })
 export class AppComponent {
   items = [];
+  itemRow;
   constructor(private dataService: DataService) { }
   addItem(name, price) {
     this.dataService.addData(name, price);
+  }
+  removeItem(i) {
+    console.log(this.items[i]);
+    // this.dataService.removeData(i);
   }
   ngOnInit() {
     this.items = this.dataService.items;

@@ -3,7 +3,7 @@
     <label for="name">Enter name</label>
     <input type="text" class="form-control" name="name" id="name" [(ngModel)]="name">
     <label for="price">Enter price</label>
-    <input type="text" class="form-control" name="price" id="price" [(ngModel)]="price">    
+    <input type="text" class="form-control" name="price" id="price" [(ngModel)]="price">
     <a href="#" class="btn btn-info" role="button" (click)="addItem(name, price)">Create</a>
   </div>
   <table class="table">
@@ -21,7 +21,7 @@
         <td>{{item.name}}</td>
         <td>{{item.price}}</td>
         <td>
-          <a href="#" (click)="removeItem(i)">
+          <a href="#" (click)="removeItem(item)">
             <i class="fa fa-close" aria-hidden="true"></i>
           </a>
         </td>

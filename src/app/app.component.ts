@@ -14,9 +14,8 @@ export class AppComponent {
   addItem(name, price) {
     this.dataService.addData(name, price);
   }
-  removeItem(i) {
-    console.log(this.items[i]);
-    // this.dataService.removeData(i);
+  removeItem(item) {
+    this.items.splice(this.items.indexOf(item), 1);
   }
   ngOnInit() {
     this.items = this.dataService.items;

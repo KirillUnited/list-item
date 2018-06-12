@@ -1,11 +1,8 @@
 <div class="container">
-  <div class="form-inline">
-    <label for="name">Enter name</label>
-    <input type="text" class="form-control" name="name" id="name" [(ngModel)]="name">
-    <label for="price">Enter price</label>
-    <input type="text" class="form-control" name="price" id="price" [(ngModel)]="price">
-    <a href="#" class="btn btn-info" role="button" (click)="addItem(name, price)">Create</a>
-  </div>
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-info btn-create" data-toggle="modal" data-target="#modelId">
+    Create
+  </button>
   <table class="table">
     <thead>
       <tr>
@@ -28,4 +25,32 @@
       </tr>
     </tbody>
   </table>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" #closeBtn class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="modelTitleId">Add new modal</h4>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="form">
+            <label for="name">Enter name</label>
+            <input type="text" class="form-control" name="name" id="name" [(ngModel)]="name">
+            <label for="price">Enter price</label>
+            <input type="text" class="form-control" name="price" id="price" [(ngModel)]="price">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <a href="#" class="btn btn-info" role="button" (click)="addItem(name, price)">Add</a>
+      </div>
+    </div>
+  </div>
 </div>

@@ -5,3 +5,10 @@ label,
 .form-control {
     margin-right: 15px;
 }
+.btn-create {
+    float: right;
+    margin: 10px
+}
+.modal-header {
+    display: block;
+}

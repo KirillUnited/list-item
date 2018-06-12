@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { DataService } from './data.service';
 
 @Component({
@@ -8,11 +8,13 @@ import { DataService } from './data.service';
   providers: [DataService]
 })
 export class AppComponent {
+  @ViewChild('closeBtn') closeBtn: ElementRef;
   items = [];
   itemRow;
   constructor(private dataService: DataService) { }
   addItem(name, price) {
     this.dataService.addData(name, price);
+    this.closeBtn.nativeElement.click();
   }
   removeItem(item) {
     this.items.splice(this.items.indexOf(item), 1);

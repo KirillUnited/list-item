@@ -41,7 +41,10 @@
         <div class="container-fluid">
           <div class="form">
             <label for="name">Enter name</label>
-            <input type="text" class="form-control" name="name" id="name" [(ngModel)]="name">
+            <input type="text" class="form-control" name="name" id="name" [(ngModel)]="name" #name1="ngModel" required>
+            <div [hidden]="name1.valid || name1.untouched" class="alert alert-danger">
+              Не указано имя
+            </div>
             <label for="price">Enter price</label>
             <input type="text" class="form-control" name="price" id="price" [(ngModel)]="price">
           </div>
@@ -49,7 +52,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <a href="#" class="btn btn-info" role="button" (click)="addItem(name, price)">Add</a>
+        <a href="#" [hidden]="name1.invalid" class="btn btn-info" role="button" (click)="addItem(name, price)">Add</a>
       </div>
     </div>
   </div>

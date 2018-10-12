@@ -1,6 +1,6 @@
 list-item
 Todo:
-  ☐ connect to database @30m
+  ☐ не добавляется описание к товару после смены переменной price на desc @critical 
 sdvsvsdvsdvsdvsdv
 Archive:
   ✔ connect to database @2h @critical @started(18-10-12 11:53) @done(18-10-12 11:53) @lasted(40s) @project(Tosdvdo)

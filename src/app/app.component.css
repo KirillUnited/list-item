@@ -7,7 +7,7 @@ label,
 }
 .btn-create {
     float: right;
-    margin: 10px
+    margin-bottom: 10px;
 }
 .modal-header {
     display: block;

@@ -1,30 +1,37 @@
-<div class="container">
-  <!-- Button trigger modal -->
-  <button type="button" class="btn btn-info btn-create" data-toggle="modal" data-target="#modelId">
-    Create
-  </button>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>model</th>
-        <th>price</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of items; let i = index">
-        <td scope="row">{{i + 1}}</td>
-        <td>{{item.name}}</td>
-        <td>{{item.price}}</td>
-        <td>
-          <a href="#" (click)="removeItem(item)">
-            <i class="fa fa-close" aria-hidden="true"></i>
-          </a>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+<div class="heading">
+  <div class="container alert alert-warning">
+    <h2>Список моделей телефонов<span class="badge badge-secondary">{{count}}</span></h2>
+  </div>
+</div>
+<div class="content">
+  <div class="container">
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-info btn-create" data-toggle="modal" data-target="#modelId">
+      Добавить
+    </button>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Модель</th>
+          <th>Описание</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of items; let i = index">
+          <td scope="row">{{i + 1}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.desc}}</td>
+          <td>
+            <a href="#" (click)="removeItem(item)">
+              <i class="fa fa-close" aria-hidden="true"></i>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 
 <!-- Modal -->
@@ -35,24 +42,24 @@
         <button type="button" #closeBtn class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-        <h4 class="modal-title" id="modelTitleId">Add new model</h4>
+        <h4 class="modal-title" id="modelTitleId">Добавить новую модель</h4>
       </div>
       <div class="modal-body">
         <div class="container-fluid">
           <div class="form">
-            <label for="name">Enter name</label>
+            <label for="name">Название</label>
             <input type="text" class="form-control" name="name" id="name" [(ngModel)]="name" #name1="ngModel" required>
             <div [hidden]="name1.valid || name1.untouched" class="alert alert-danger">
-              Не указано имя
+              Не указано название
             </div>
-            <label for="price">Enter price</label>
-            <input type="text" class="form-control" name="price" id="price" [(ngModel)]="price">
+            <label for="desc">Описание</label>
+            <input type="text" class="form-control" name="desc" id="desc" [(ngModel)]="desc">
           </div>
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <a href="#" [hidden]="name1.invalid" class="btn btn-info" role="button" (click)="addItem(name, price)">Add</a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+        <a href="#" [hidden]="name1.invalid" class="btn btn-info" role="button" (click)="addItem(name, price)">Добавить</a>
       </div>
     </div>
   </div>

@@ -9,6 +9,8 @@ export class DataService {
   ];
   count = this.items.length;
   addData(name, desc) {
+    console.log(name, desc);
+    
     this.items.push({
       name: name,
       desc: desc

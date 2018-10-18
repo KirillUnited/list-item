@@ -14,6 +14,8 @@ export class AppComponent {
   itemRow;
   constructor(private dataService: DataService) { }
   addItem(name, desc) {
+    console.log(name, desc);
+    
     this.dataService.addData(name, desc);
     this.closeBtn.nativeElement.click();
     this.count++;
